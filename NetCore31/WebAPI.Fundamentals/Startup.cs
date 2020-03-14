@@ -27,6 +27,8 @@ namespace WebAPI.Fundamentals
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
