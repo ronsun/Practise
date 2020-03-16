@@ -21,6 +21,11 @@ namespace WebAPI.Fundamentals
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+                .ConfigureHostConfiguration((config) =>
+                {
+                    config.AddEnvironmentVariables("RON_");
+                })
+            ;
     }
 }
