@@ -24,6 +24,9 @@ namespace WebAPI.Fundamentals
                 })
                 .ConfigureHostConfiguration((config) =>
                 {
+                    config.AddJsonFile("Configuration/config.json", optional: false, reloadOnChange: true);
+                    config.AddXmlFile("Configuration/config.xml");
+                    config.AddXmlFile("Configuration/notFound.xml", optional: true);
                     config.AddEnvironmentVariables("RON_");
                 })
             ;
